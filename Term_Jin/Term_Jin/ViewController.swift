@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBAction func assign(_ sender: Any) {
+    }
     @IBOutlet weak var LogoImage: UIImageView!
     @IBOutlet weak var assingnButton: UIButton!
     override func viewDidLoad() {
