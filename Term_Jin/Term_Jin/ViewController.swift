@@ -11,8 +11,10 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBAction func refresh(_ sender: Any) {
+        //url requesttime을 현재시간으로 
     }
     @IBAction func assign(_ sender: Any) {
+        //voice 연동 가능???
     }
     @IBOutlet weak var LogoImage: UIImageView!
     @IBOutlet weak var assingnButton: UIButton!
