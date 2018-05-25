@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBAction func refresh(_ sender: Any) {
+    }
     @IBAction func assign(_ sender: Any) {
     }
     @IBOutlet weak var LogoImage: UIImageView!
