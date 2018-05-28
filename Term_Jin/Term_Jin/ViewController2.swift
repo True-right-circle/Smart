@@ -50,11 +50,9 @@ class ViewController2: UIViewController,XMLParserDelegate {
         if element.isEqual(to: "img"){
             for i in 0..<check+1
             {
-                print(check)
                 imageurl.insert(string, at: i)
                 urls.append(contentsOf: imageurl)
                 loadimage(i: i)
-                print(imageurl[i])
             }
             check += 1
         }
@@ -90,7 +88,6 @@ class ViewController2: UIViewController,XMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         beginParsing()
-        print(urls)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
