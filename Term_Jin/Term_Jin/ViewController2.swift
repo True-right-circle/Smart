@@ -6,19 +6,23 @@
 //  Copyright © 2018년 Jin. All rights reserved.
 //
 
+import Foundation
 import UIKit
+
 
 class ViewController2: UIViewController,XMLParserDelegate {
     
     @IBOutlet weak var img1: UIImageView!
     @IBOutlet weak var img2: UIImageView!
     @IBOutlet weak var img3: UIImageView!
+    var check :Int = 1
     var parser = XMLParser()
     var posts = NSMutableArray()
     var elements = NSMutableDictionary()
     var element = NSString()
    
-    var imageurl = NSMutableString()
+    var imageurl :[String] = []
+    var urls :[String] = []
 
     func beginParsing()
     {
@@ -37,34 +41,56 @@ class ViewController2: UIViewController,XMLParserDelegate {
             elements = NSMutableDictionary()
             elements = [:]
             
-            imageurl = NSMutableString()
-            imageurl = ""
+            imageurl = []
+
         }
     }
     func parser(_ parser: XMLParser,foundCharacters string: String)
     {
         if element.isEqual(to: "img"){
-            imageurl.append(string)
-        }
-    }
-    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
-    {
-        if(elementName as NSString).isEqual(to: "ticketList"){
-            if !imageurl.isEqual(nil){
-                elements.setObject(imageurl, forKey: "img" as NSCopying)
+            for i in 0..<check+1
+            {
+                print(check)
+                imageurl.insert(string, at: i)
+                urls.append(contentsOf: imageurl)
+                loadimage(i: i)
+                print(imageurl[i])
             }
-            posts.add(elements)
+            check += 1
         }
     }
-    func loadimage()
+    
+    
+    func loadimage(i: Int)
     {
+       
+        do {
+            if i == 0
+            {
+                let url = URL(string: urls[0])
+                let data = try Data(contentsOf: url!)
+                img1.image = UIImage(data: data)
+                
+            }
+            if i == 2
+            {
+                let url = URL(string: urls[3])
+                let data = try Data(contentsOf: url!)
+                img2.image = UIImage(data: data)
+                
+            }
+        }
+        catch{
+            print(error)
+        }
+
         //img1.image = #imageLiteral(resourceName: "test.jpeg")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         beginParsing()
-        loadimage()
+        print(urls)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
