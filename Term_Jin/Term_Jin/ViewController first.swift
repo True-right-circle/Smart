@@ -145,7 +145,7 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate {
     }
     func loadend()
     {
-        de.text = startDater2[0]
+        de.text = endDater2[0]
     }
     func loadstart()
     {
