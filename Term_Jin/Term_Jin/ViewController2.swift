@@ -10,7 +10,10 @@ import UIKit
 
 
 class ViewController2: UIViewController,XMLParserDelegate {
+    @IBOutlet weak var img4: UIImageView!
     
+    @IBOutlet weak var img6: UIImageView!
+    @IBOutlet weak var img5: UIImageView!
     @IBOutlet weak var img1: UIImageView!
     @IBOutlet weak var img2: UIImageView!
     @IBOutlet weak var img3: UIImageView!
@@ -71,6 +74,33 @@ class ViewController2: UIViewController,XMLParserDelegate {
                 let data = try Data(contentsOf: url!)
                 img2.image = UIImage(data: data)
                 
+            }
+            if i == 2
+            {
+                let url = URL(string: imageurl[2])
+                let data = try Data(contentsOf: url!)
+                img3.image = UIImage(data: data)
+                
+            }
+            if i == 3
+            {
+                let url = URL(string: imageurl[3])
+                let data = try Data(contentsOf: url!)
+                img4.image = UIImage(data: data)
+                
+            }
+            if i == 4
+            {
+                let url = URL(string: imageurl[4])
+                let data = try Data(contentsOf: url!)
+                img5.image = UIImage(data: data)
+                
+            }
+            if i == 5
+            {
+                let url = URL(string: imageurl[5])
+                let data = try Data(contentsOf: url!)
+                img6.image = UIImage(data: data)
             }
         }
         catch{
