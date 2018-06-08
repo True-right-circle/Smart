@@ -81,7 +81,7 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate {
                 urls.append(contentsOf: imageurl)
                 loadimage(i: i)
             }
-            //check += 1
+            check += 1
         }
         if element.isEqual(to: "title"){
             for i in 0..<check1+1
@@ -90,7 +90,7 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate {
                 titler2.append(contentsOf: titler)
                 loadtext()
             }
-            //check1 += 1
+            check1 += 1
         }
         if element.isEqual(to: "price"){
             for i in 0..<check2+1
@@ -99,7 +99,7 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate {
                 pricer2.append(contentsOf: pricer)
                 loadprice()
             }
-           // check2 += 1
+            check2 += 1
         }
         if element.isEqual(to: "place"){
             for i in 0..<check3+1
@@ -108,7 +108,7 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate {
                 discounter2.append(contentsOf: discounter)
                 loaddis()
             }
-            //check3 += 1
+            check3 += 1
         }
         if element.isEqual(to: "startDate"){
             for i in 0..<check4+1
@@ -117,7 +117,7 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate {
                 startDater2.append(contentsOf: startDater)
                 loadstart()
             }
-            //check4 += 1
+            check4 += 1
         }
         if element.isEqual(to: "endDate"){
             for i in 0..<check5+1
@@ -126,7 +126,7 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate {
                 endDater2.append(contentsOf: endDater)
                 loadend()
             }
-            //check5 += 1
+            check5 += 1
         }
         if element.isEqual(to: "useCond"){
             for i in 0..<check6+1
@@ -135,7 +135,7 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate {
                 infoer2.append(contentsOf: infoer)
                 loadinfo()
             }
-            //check6 += 1
+            check6 += 1
         }
     }
     
@@ -173,20 +173,25 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate {
                 let url = URL(string: urls[0])
                 let data = try Data(contentsOf: url!)
                 mainimg.image = UIImage(data: data)
+                
             }
         }
         catch{
             print(error)
         }
+        
+        //img1.image = #imageLiteral(resourceName: "test.jpeg")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         beginParsing()
+        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
 }
