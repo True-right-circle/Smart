@@ -23,8 +23,7 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate {
     @IBOutlet weak var mainimg: UIImageView!
     
     var check :Int = 0
-
-    
+   
     var parser = XMLParser()
     var posts = NSMutableArray()
     var elements = NSMutableDictionary()
@@ -78,15 +77,8 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate {
             //print(urls)
         }
         if element.isEqual(to: "title"){
-            if element.isEqual(to: "*")
-            {
-                titler2.append(string)
-            }
-            else
-            {
-             titler2.append(string)
+            titler2.append(string)
                 loadtext()
-            }
         }
         if element.isEqual(to: "price"){
 
@@ -106,9 +98,12 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate {
                 loadend()
         }
         if element.isEqual(to: "useCond"){
+            if(string != "*")
+            {
                 infoer2.append(string)
-                print(infoer2)
-            loadinfo()
+                loadinfo()
+            }
+            print(infoer2)
             //print(infoer2)
         }
     }
@@ -116,7 +111,7 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate {
     func loadinfo()
     {
 
-        getinfo.text = infoer2.description
+        getinfo.text = infoer2[0]
         
     }
     func loadend()
@@ -160,7 +155,6 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         beginParsing()
-        print(infoer2)
         // Do any additional setup after loading the view, typically from a nib.
     }
     

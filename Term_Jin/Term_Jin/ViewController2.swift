@@ -18,6 +18,7 @@ class ViewController2: UIViewController,XMLParserDelegate {
     @IBOutlet weak var img2: UIImageView!
     @IBOutlet weak var img3: UIImageView!
     var check :Int = 0
+    var divind :Int = 0
     var parser = XMLParser()
     var posts = NSMutableArray()
     var elements = NSMutableDictionary()
@@ -26,6 +27,10 @@ class ViewController2: UIViewController,XMLParserDelegate {
     var imageurl :[String] = []
     var urls :[String] = []
     
+    func sendM(i: Int)->Int
+    {
+        return i
+    }
     func beginParsing()
     {
         posts = []
