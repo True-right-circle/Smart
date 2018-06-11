@@ -8,15 +8,12 @@
 
 import Foundation
 import UIKit
-import WebKit
 
-class ViewControllerfirst: UIViewController,XMLParserDelegate,WKUIDelegate {
-   
-    @IBOutlet weak var testweb: UIWebView!
+class ViewControllerfirst6: UIViewController,XMLParserDelegate {
     
-    
-    @IBAction func ticket(_ sender: Any) {
-        UIApplication.shared.openURL(NSURL(string: infoer3[0])! as URL)
+    @IBAction func img6(_ sender: Any) {
+        UIApplication.shared.openURL(NSURL(string: infoer3[5])! as URL)
+        
     }
     @IBOutlet weak var getinfo: UILabel!
     @IBOutlet weak var de: UILabel!
@@ -42,7 +39,7 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate,WKUIDelegate {
     var endDater :[String] = []
     var infoer:[String] = []
     var discounter:[String] = []
-    var map:String = ""
+    var map: String = ""
 
     var titler2 :[String] = []
     var pricer2 :[String] = []
@@ -50,6 +47,10 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate,WKUIDelegate {
     var endDater2 :[String] = []
     var infoer2:[String] = []
     var infoer3:[String] = []
+    var infoer4:[String] = []
+    var infoer5:[String] = []
+    var infoer6:[String] = []
+    var infoer7:[String] = []
     var discounter2:[String] = []
     
     func beginParsing()
@@ -70,14 +71,11 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate,WKUIDelegate {
             elements = [:]
         }
     }
-    
-    //ticketImg
     func parser(_ parser: XMLParser,foundCharacters string: String)
     {
         if element.isEqual(to: "img"){
-                urls.append(string)
-                loadimage(i: check)
-            check += 1
+            urls.append(string)
+            loadimage(i: check)
             //print(urls)
         }
         if element.isEqual(to: "ticketImg"){
@@ -85,65 +83,79 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate,WKUIDelegate {
             //print(urls)
         }
         if element.isEqual(to: "title"){
-            titler2.append(string)
-                loadtext()
+            if string != "'"
+            {
+                titler2.append(string)
+                loadtext(i: check)
+            }
         }
         if element.isEqual(to: "place"){
-                discounter2.append(string)
-                loaddis()
+            discounter2.append(string)
+            loaddis(i: check)
         }
         if element.isEqual(to: "startDate"){
             startDater2.append(string)
-                loadstart()
+            loadstart(i: check)
         }
         if element.isEqual(to: "endDate"){
-                endDater2.append(string)
-                loadend()
+            endDater2.append(string)
+            loadend(i: check)
+            
         }
         if element.isEqual(to: "useCond"){
             if(string != "*")
             {
                 infoer2.append(string)
-                loadinfo()
+                loadinfo(i: check)
+                check += 1
             }
-            //print(infoer2)
         }
     }
     
-    func loadinfo()
+    func loadinfo(i: Int)
     {
-
-        getinfo.text = infoer2[0]
-        
+        if i == 5{
+            getinfo.text = infoer2[5]
+        }
     }
-    func loadend()
+    func loadend(i: Int)
     {
-        de.text = endDater2[0]
+        if i == 5{
+            de.text = endDater2[5]
+        }
     }
-    func loadstart()
+    func loadstart(i: Int)
     {
-        ds.text = startDater2[0]
+        if i == 5{
+            ds.text = startDater2[5]
+        }
     }
-    func loaddis()
+    @IBOutlet weak var testweb: UIWebView!
+    func loaddis(i: Int)
     {
-        discount.text = discounter2[0]
-        map = "https://map.naver.com/?query="+discounter2[0]+"&type=SITE_1&siteOrder="
-        //print(discounter2[0])
+        if i == 5{
+            discount.text = discounter2[6]
+            map = "https://map.naver.com/?query="+discounter2[6]+"&type=SITE_1&siteOrder="
+        }
     }
-    func loadtext()
+    func loadtext(i: Int)
     {
-        ptitle.text = titler2[0]
+        if i == 5{
+            ptitle.text = titler2[5]
+        }
     }
-    func loadprice()
+    func loadprice(i: Int)
     {
-        price.text = pricer2[0]
+        if i == 5{
+            price.text = pricer2[5]
+        }
     }
     func loadimage(i: Int)
     {
         do {
-            if i == 0
+            if i == 5
             {
-                let url = URL(string: urls[0])
+                let url = URL(string: urls[5])
                 let data = try Data(contentsOf: url!)
                 mainimg.image = UIImage(data: data)
             }
@@ -154,7 +166,7 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate,WKUIDelegate {
         
         //img1.image = #imageLiteral(resourceName: "test.jpeg")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         beginParsing()
@@ -163,11 +175,13 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate,WKUIDelegate {
         let realu = URL(string: encoded)
         let request = URLRequest(url: realu!)
         testweb.loadRequest(request)
-    
+        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
 }
+

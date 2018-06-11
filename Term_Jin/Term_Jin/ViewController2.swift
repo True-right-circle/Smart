@@ -10,15 +10,36 @@ import UIKit
 
 
 class ViewController2: UIViewController,XMLParserDelegate {
+ 
+    public var divind :Int = 10
+    
     @IBOutlet weak var img4: UIImageView!
     
+    @IBAction func img6(_ sender: Any) {
+        divind = 6
+    }
+    @IBAction func img3(_ sender: Any) {
+        divind = 3
+    }
+    @IBAction func img2(_ sender: Any) {
+        divind = 2
+    }
+    @IBAction func img4(_ sender: Any) {
+        divind = 4
+    }
+    @IBAction func img5(_ sender: Any) {
+        divind = 5
+    }
+    @IBAction func img1(_ sender: Any) {
+        divind = 1
+        print("값이 바뀝니다")
+    }
     @IBOutlet weak var img6: UIImageView!
     @IBOutlet weak var img5: UIImageView!
     @IBOutlet weak var img1: UIImageView!
     @IBOutlet weak var img2: UIImageView!
     @IBOutlet weak var img3: UIImageView!
     var check :Int = 0
-    var divind :Int = 0
     var parser = XMLParser()
     var posts = NSMutableArray()
     var elements = NSMutableDictionary()
@@ -118,9 +139,7 @@ class ViewController2: UIViewController,XMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         beginParsing()
-        //print(imageurl)
-        //print(testint)
-       // print(urls)
+        print(divind)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
