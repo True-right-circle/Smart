@@ -22,13 +22,8 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate {
     @IBOutlet weak var ptitle: UILabel!
     @IBOutlet weak var mainimg: UIImageView!
     
-    var check :Int = 1
-    var check1 :Int = 1
-    var check2 :Int = 1
-    var check3 :Int = 1
-    var check4 :Int = 1
-    var check5 :Int = 1
-    var check6 :Int = 1
+    var check :Int = 0
+
     
     var parser = XMLParser()
     var posts = NSMutableArray()
@@ -49,6 +44,11 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate {
     var startDater2 :[String] = []
     var endDater2 :[String] = []
     var infoer2:[String] = []
+    var infoer3:[String] = []
+    var infoer4:[String] = []
+    var infoer5:[String] = []
+    var infoer6:[String] = []
+    var infoer7:[String] = []
     var discounter2:[String] = []
     
     func beginParsing()
@@ -67,81 +67,57 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate {
         {
             elements = NSMutableDictionary()
             elements = [:]
-            
-            imageurl = []
-            
         }
     }
     func parser(_ parser: XMLParser,foundCharacters string: String)
     {
         if element.isEqual(to: "img"){
-            for i in 0..<check+1
-            {
-                imageurl.insert(string, at: i)
-                urls.append(contentsOf: imageurl)
-                loadimage(i: i)
-            }
+                urls.append(string)
+                loadimage(i: check)
             check += 1
+            //print(urls)
         }
         if element.isEqual(to: "title"){
-            for i in 0..<check1+1
+            if element.isEqual(to: "*")
             {
-                titler.insert(string, at: i)
-                titler2.append(contentsOf: titler)
+                titler2.append(string)
+            }
+            else
+            {
+             titler2.append(string)
                 loadtext()
             }
-            check1 += 1
         }
         if element.isEqual(to: "price"){
-            for i in 0..<check2+1
-            {
-                pricer.insert(string, at: i)
-                pricer2.append(contentsOf: pricer)
+
+                pricer2.append(string)
                 loadprice()
-            }
-            check2 += 1
         }
         if element.isEqual(to: "place"){
-            for i in 0..<check3+1
-            {
-                discounter.insert(string, at: i)
-                discounter2.append(contentsOf: discounter)
+                discounter2.append(string)
                 loaddis()
-            }
-            check3 += 1
         }
         if element.isEqual(to: "startDate"){
-            for i in 0..<check4+1
-            {
-                startDater.insert(string, at: i)
-                startDater2.append(contentsOf: startDater)
+            startDater2.append(string)
                 loadstart()
-            }
-            check4 += 1
         }
         if element.isEqual(to: "endDate"){
-            for i in 0..<check5+1
-            {
-                endDater.insert(string, at: i)
-                endDater2.append(contentsOf: endDater)
+                endDater2.append(string)
                 loadend()
-            }
-            check5 += 1
         }
         if element.isEqual(to: "useCond"){
-            for i in 0..<check6+1
-            {
-                infoer.insert(string, at: i)
-                infoer2.append(contentsOf: infoer)
-                loadinfo()
-            }
-            check6 += 1
+                infoer2.append(string)
+                print(infoer2)
+            loadinfo()
+            //print(infoer2)
         }
     }
     
     func loadinfo()
     {
-        getinfo.text = infoer2[0]
+
+        getinfo.text = infoer2.description
+        
     }
     func loadend()
     {
@@ -154,7 +130,7 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate {
     func loaddis()
     {
         discount.text = discounter2[0]
-        print(discounter2[0])
+        //print(discounter2[0])
     }
     func loadtext()
     {
@@ -166,14 +142,12 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate {
     }
     func loadimage(i: Int)
     {
-        
         do {
             if i == 0
             {
                 let url = URL(string: urls[0])
                 let data = try Data(contentsOf: url!)
                 mainimg.image = UIImage(data: data)
-                
             }
         }
         catch{
@@ -186,6 +160,7 @@ class ViewControllerfirst: UIViewController,XMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         beginParsing()
+        print(infoer2)
         // Do any additional setup after loading the view, typically from a nib.
     }
     

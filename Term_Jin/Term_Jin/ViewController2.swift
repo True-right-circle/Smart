@@ -113,7 +113,7 @@ class ViewController2: UIViewController,XMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         beginParsing()
-        print(imageurl)
+        //print(imageurl)
         //print(testint)
        // print(urls)
         // Do any additional setup after loading the view, typically from a nib.
