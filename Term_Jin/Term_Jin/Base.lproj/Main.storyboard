@@ -32,13 +32,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7B5-Ce-Wby">
-                                <rect key="frame" x="157" y="455" width="100" height="134"/>
+                                <rect key="frame" x="157" y="469" width="100" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="26"/>
                                 <state key="normal" title="조회">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="abuu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PSr-an-uEX"/>
                                     <action selector="assign:" destination="BYZ-38-t0r" eventType="touchUpInside" id="41I-GI-8ir"/>
                                     <segue destination="u5V-Pt-5rj" kind="show" id="UI0-YW-Mdx"/>
                                 </connections>
@@ -50,6 +51,7 @@
                     <connections>
                         <outlet property="LogoImage" destination="pkJ-lm-ESx" id="N1v-0z-XYs"/>
                         <outlet property="assingnButton" destination="7B5-Ce-Wby" id="4Z5-UN-cTy"/>
+                        <outlet property="buuu" destination="7B5-Ce-Wby" id="8yn-nb-of9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -840,6 +842,6 @@
         <image name="sdfsdf.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="My7-RB-AvQ"/>
+        <segue reference="UI0-YW-Mdx"/>
     </inferredMetricsTieBreakers>
 </document>
