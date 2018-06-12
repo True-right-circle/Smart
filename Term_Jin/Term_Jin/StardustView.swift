@@ -42,7 +42,7 @@ class StardustView: UIView {
         emitterCell.name = "cell"
         emitterCell.contents = texture?.cgImage
         emitterCell.birthRate = 200
-        emitterCell.lifetime = 1.5          //ExplodeView보다 lifetime이 길다.
+        emitterCell.lifetime = 2.5          //ExplodeView보다 lifetime이 길다.
         emitterCell.redRange = 0.99
         emitterCell.redSpeed = -0.99
         emitterCell.xAcceleration = -200    //오른쪽으로 이동할 때 파티클이 왼쪽으로 흩날린다.

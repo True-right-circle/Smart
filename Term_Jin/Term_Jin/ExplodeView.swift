@@ -44,7 +44,7 @@ class ExplodeView: UIView {
         emitterCell.name = "cell"               //name 설정
         emitterCell.contents = texture?.cgImage //contents는 texture 이미지로
         emitterCell.birthRate = 2000     //1초에 200개 생성
-        emitterCell.lifetime = 1.75     //1개 particle는 0.75초 동안 생존
+        emitterCell.lifetime = 2.75     //1개 particle는 0.75초 동안 생존
         emitterCell.redRange = 0.99    //랜덤색깔 rgb(1,1,1) ~ (1,1,0.67)white~orange
         emitterCell.redSpeed = -0.99   //시간이 지나면서 blue 색을 줄인다.
         emitterCell.velocity = 160      //셀의 속도 범위 160-40 ~ 160+40
