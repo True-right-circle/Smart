@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C06041A20D6F803006156F6 /* back.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3C06041920D6F803006156F6 /* back.jpeg */; };
+		3C06042020D6FC30006156F6 /* NMapViewResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C06041F20D6FC30006156F6 /* NMapViewResources.swift */; };
 		3C293E1A20BB85AF00ECD920 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C293E1920BB85AF00ECD920 /* ViewController2.swift */; };
 		3C293E1C20BB902300ECD920 /* test.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3C293E1B20BB902300ECD920 /* test.jpeg */; };
 		3C2A2E2D20CE967000361B98 /* ViewController first5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2E2820CE966F00361B98 /* ViewController first5.swift */; };
@@ -24,8 +26,6 @@
 		3CA86CD420CEC2CF00EA1EB6 /* ApiGatewayMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA86CD320CEC2CF00EA1EB6 /* ApiGatewayMac.framework */; };
 		3CA86CD520CEC2CF00EA1EB6 /* ApiGatewayMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA86CD320CEC2CF00EA1EB6 /* ApiGatewayMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3CA86CD920CEC2F300EA1EB6 /* NMapViewerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA86CD820CEC2F300EA1EB6 /* NMapViewerSDK.framework */; };
-		3CA86CDD20CEC76100EA1EB6 /* NMapViewResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA86CDC20CEC76100EA1EB6 /* NMapViewResources.swift */; };
-		3CA86CDF20CF2BC800EA1EB6 /* back.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CA86CDE20CF2BC800EA1EB6 /* back.jpg */; };
 		3CA86CE120CF2E7D00EA1EB6 /* win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CA86CE020CF2E7D00EA1EB6 /* win.mp3 */; };
 		3CA86CE420CF302100EA1EB6 /* StardustView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA86CE220CF302000EA1EB6 /* StardustView.swift */; };
 		3CA86CE520CF302100EA1EB6 /* ExplodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA86CE320CF302000EA1EB6 /* ExplodeView.swift */; };
@@ -47,6 +47,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3C06041920D6F803006156F6 /* back.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back.jpeg; sourceTree = "<group>"; };
+		3C06041F20D6FC30006156F6 /* NMapViewResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NMapViewResources.swift; sourceTree = "<group>"; };
 		3C293E1920BB85AF00ECD920 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		3C293E1B20BB902300ECD920 /* test.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpeg; sourceTree = "<group>"; };
 		3C2A2E2820CE966F00361B98 /* ViewController first5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController first5.swift"; sourceTree = "<group>"; };
@@ -66,8 +68,6 @@
 		3CA86CD320CEC2CF00EA1EB6 /* ApiGatewayMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ApiGatewayMac.framework; sourceTree = "<group>"; };
 		3CA86CD820CEC2F300EA1EB6 /* NMapViewerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NMapViewerSDK.framework; path = "../../../Downloads/maps.ios-master/Frameworks/NMapViewerSDK.framework"; sourceTree = "<group>"; };
 		3CA86CDB20CEC4D800EA1EB6 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
-		3CA86CDC20CEC76100EA1EB6 /* NMapViewResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NMapViewResources.swift; path = "../../../../Downloads/maps.ios-master/NMapSampleSwift/NMapSampleSwift/NMapViewResources.swift"; sourceTree = "<group>"; };
-		3CA86CDE20CF2BC800EA1EB6 /* back.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = back.jpg; path = ../../../../Downloads/back.jpg; sourceTree = "<group>"; };
 		3CA86CE020CF2E7D00EA1EB6 /* win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = win.mp3; path = ../../win.mp3; sourceTree = "<group>"; };
 		3CA86CE220CF302000EA1EB6 /* StardustView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StardustView.swift; sourceTree = "<group>"; };
 		3CA86CE320CF302000EA1EB6 /* ExplodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplodeView.swift; sourceTree = "<group>"; };
@@ -110,7 +110,6 @@
 			children = (
 				3C7C029B20AF08CC001678B3 /* AppDelegate.swift */,
 				3C7C029D20AF08CC001678B3 /* ViewController.swift */,
-				3CA86CDC20CEC76100EA1EB6 /* NMapViewResources.swift */,
 				3C293E1920BB85AF00ECD920 /* ViewController2.swift */,
 				3C5CCC3520BC78BB009EDFAE /* ViewController first.swift */,
 				3C2A2E2C20CE967000361B98 /* ViewController first2.swift */,
@@ -121,7 +120,8 @@
 				3CA86CE320CF302000EA1EB6 /* ExplodeView.swift */,
 				3CA86CE220CF302000EA1EB6 /* StardustView.swift */,
 				3C2A2E2920CE967000361B98 /* ViewController first6.swift */,
-				3CA86CDE20CF2BC800EA1EB6 /* back.jpg */,
+				3C06041920D6F803006156F6 /* back.jpeg */,
+				3C06041F20D6FC30006156F6 /* NMapViewResources.swift */,
 				3C7C029F20AF08CC001678B3 /* Main.storyboard */,
 				3CA86CE020CF2E7D00EA1EB6 /* win.mp3 */,
 				3C7C02A220AF08CC001678B3 /* Assets.xcassets */,
@@ -203,13 +203,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C06041A20D6F803006156F6 /* back.jpeg in Resources */,
 				3C7C02A620AF08CC001678B3 /* LaunchScreen.storyboard in Resources */,
 				3C5CCC3420BC76BA009EDFAE /* sdfsdf.png in Resources */,
 				3CA86CE120CF2E7D00EA1EB6 /* win.mp3 in Resources */,
 				3CA86CE720CF314500EA1EB6 /* particle.png in Resources */,
 				3C293E1C20BB902300ECD920 /* test.jpeg in Resources */,
 				3C7C02A320AF08CC001678B3 /* Assets.xcassets in Resources */,
-				3CA86CDF20CF2BC800EA1EB6 /* back.jpg in Resources */,
 				3C7C02A120AF08CC001678B3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,8 +241,8 @@
 				3C2A2E2D20CE967000361B98 /* ViewController first5.swift in Sources */,
 				3C2A2E3020CE967000361B98 /* ViewController first4.swift in Sources */,
 				3C5CCC3620BC78BB009EDFAE /* ViewController first.swift in Sources */,
+				3C06042020D6FC30006156F6 /* NMapViewResources.swift in Sources */,
 				3C7C029E20AF08CC001678B3 /* ViewController.swift in Sources */,
-				3CA86CDD20CEC76100EA1EB6 /* NMapViewResources.swift in Sources */,
 				3C7C029C20AF08CC001678B3 /* AppDelegate.swift in Sources */,
 				3C293E1A20BB85AF00ECD920 /* ViewController2.swift in Sources */,
 				3C2A2E3120CE967000361B98 /* ViewController first2.swift in Sources */,
